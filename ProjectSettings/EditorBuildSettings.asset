@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/David-Scenes/David_Test.unity
+    guid: 91ebef32691fd1a4ebdbf7874ebe7ccc
