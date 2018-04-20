@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(UnityEngine.UI.Text))]
 public class TimerScript : MonoBehaviour {
-    [Tooltip("secondsLeft is the amount of time the players have left to complete the ")]
+    [Tooltip("secondsLeft is the amount of seconds that this timer has left before it reaches 0.")]
     public int secondsLeft = 60;
     [Tooltip("countdownRate is how long it takes before the timer decrements by 1 second. A value of 1 means the timer decrements at 1 second per second.")]
     public float countdownRate = 1f;
@@ -16,19 +16,29 @@ public class TimerScript : MonoBehaviour {
 
 
     void Update () {
-        if (!countdownStarted) { StartCoroutine(decrementTime()); }
+        if (!countdownStarted && secondsLeft != 0) { StartCoroutine(decrementTime()); }
         timerTextObj.text = constantTimerText + secondsLeft.ToString();
 	}
 
-    // Public Functions
+    /// <summary>
+    /// <para>Add some amount of seconds to the timer.</para>
+    /// </summary>
     public void addTime(int seconds) {
+
         secondsLeft += seconds;
     }
 
+    /// <summary>
+    /// <para>Subtract some amount of seconds to the timer.</para>
+    /// </summary>
     public void subtractTime(int seconds) {
         secondsLeft -= seconds;
     }
 
+    /// <summary>
+    /// <para>Adjust the rate at which the timer decrements seconds.</para>
+    /// <para>A value of 1 sets the countdown rate to 1 seconds per second.</para>
+    /// </summary>
     public void setCountdownRate(int rate) {
         countdownRate = rate;
     }
