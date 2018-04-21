@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+// This script creates a camera for the networked version of the player.
+// Do not use with offline version (yet).
 public class PlayerCameraSpawner : NetworkBehaviour {
 
 	public GameObject cameraPrefab;
 	public testCharacterDirection aimController;
 
-	public GameObject cam;
+	private GameObject cam;
 
 	// void awake() {
 	// 	if (!isLocalPlayer) {
@@ -26,23 +28,39 @@ public class PlayerCameraSpawner : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (!isLocalPlayer) {
-			return;
-		}
+		// if (!isLocalPlayer) {
+		// 	return;
+		// }
 
-		cam = Instantiate(cameraPrefab);
-		testNetworkCamera camera = cam.GetComponent<testNetworkCamera>();
-		camera.target = transform;
+		// if (cam == null) {
+		// 	cam = Instantiate(cameraPrefab);
+		// 	testNetworkCamera camera = cam.GetComponent<testNetworkCamera>();
+		// 	camera.target = transform;
 
-		if (aimController != null) {
-			aimController.cam = cam.GetComponent<Camera>();
+		// 	if (aimController != null) {
+		// 		aimController.cam = cam.GetComponent<Camera>();
+		// 	}
+		// }
+	}
+
+	public override void OnStartLocalPlayer() {
+		if (cam == null) {
+			cam = Instantiate(cameraPrefab);
+			testNetworkCamera camera = cam.GetComponent<testNetworkCamera>();
+			camera.target = transform;
+
+			if (aimController != null) {
+				aimController.cam = cam.GetComponent<Camera>();
+			}
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (aimController != null) {
-			aimController.cam = cam.GetComponent<Camera>();
+		if (isLocalPlayer) {
+			if (aimController != null) {
+				aimController.cam = cam.GetComponent<Camera>();
+			}
 		}
 	}
 
@@ -51,5 +69,9 @@ public class PlayerCameraSpawner : NetworkBehaviour {
 			Camera camRef = cam.GetComponent<Camera>();
 			return camRef;
 		// }
+	}
+
+	public bool CameraSpawned() {
+		return (cam != null);
 	}
 }

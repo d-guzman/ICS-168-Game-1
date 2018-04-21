@@ -13,7 +13,7 @@ public class testCharacterDirection : NetworkBehaviour {
 	void Start () {
 		if (useNetworking) {
 			PlayerCameraSpawner camSpawner = gameObject.GetComponent<PlayerCameraSpawner>();
-			if (camSpawner.cam != null) {
+			if (camSpawner.CameraSpawned()) {
 				cam = camSpawner.GetPlayerCamera();
 			}
 		}

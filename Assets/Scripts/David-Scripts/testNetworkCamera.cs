@@ -18,9 +18,9 @@ public class testNetworkCamera : NetworkBehaviour {
 
     private void LateUpdate()
     {
-		if (!isLocalPlayer) {
-			return;
-		}
+		// if (!isLocalPlayer) {
+		// 	return;
+		// }
 		
         transform.position = target.transform.position + offset;
         transform.LookAt(target);
