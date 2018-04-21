@@ -34,8 +34,11 @@ public class GameManager : MonoBehaviour {
             GM_cdTimer = GameObject.FindGameObjectWithTag("Timer");
             if (GM_cdTimer != null) { GM_cdTimerScript = GM_cdTimer.GetComponentInChildren<TimerScript>(); }
 
-            GM_cdTimerScript.secondsLeft = GM_secondsLeft;  // When the GM enters a scene, take the timer in the scene and set its seconds left to the value in the GM.
-            GM_cdTimerScript.countdownRate = GM_countdownRate;  // Do the same as above, but for the countdown rate.
+            if (GM_cdTimerScript != null)
+            {
+                GM_cdTimerScript.secondsLeft = GM_secondsLeft;  // When the GM enters a scene, take the timer in the scene and set its seconds left to the value in the GM.
+                GM_cdTimerScript.countdownRate = GM_countdownRate;  // Do the same as above, but for the countdown rate.
+            }
         }
     }
 
