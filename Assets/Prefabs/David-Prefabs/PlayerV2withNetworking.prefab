@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remotePlayerColor: {r: 0, g: 0, b: 1, a: 1}
+  localPlayerColor: {r: 0.9411765, g: 0.20069207, b: 0.20069207, a: 1}
 --- !u!114 &114349648984173500
 MonoBehaviour:
   m_ObjectHideFlags: 1
