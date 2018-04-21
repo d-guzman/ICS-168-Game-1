@@ -22,11 +22,7 @@ public class testCharacterDirection : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!useNetworking) {
-			RaycastHit hit;
-			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray, out hit)) {
-				transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
-			}
+			FindPlayerDirection();
 		}
 		
 		else {
@@ -34,11 +30,16 @@ public class testCharacterDirection : NetworkBehaviour {
 				return;
 			}
 
-			RaycastHit hit;
-			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray, out hit)) {
-				transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
-			}
+			FindPlayerDirection();
+		}
+	}
+
+	// helper function that calculates where the player object should be pointing based on player input.
+	private void FindPlayerDirection() {
+		RaycastHit hit;
+		Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+		if (Physics.Raycast(ray, out hit)) {
+			transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 		}
 	}
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+// Networked version of Nikhil's testCamera class
 public class testNetworkCamera : NetworkBehaviour {
 
 	public Transform target;
@@ -22,7 +23,9 @@ public class testNetworkCamera : NetworkBehaviour {
 		// 	return;
 		// }
 		
-        transform.position = target.transform.position + offset;
-        transform.LookAt(target);
+        if (target != null) {
+            transform.position = target.transform.position + offset;
+            transform.LookAt(target);
+        }
     }
 }
