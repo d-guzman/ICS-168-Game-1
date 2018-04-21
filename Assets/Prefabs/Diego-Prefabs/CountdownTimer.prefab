@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114986657097429090}
   m_Layer: 5
   m_Name: CountdownTimer
-  m_TagString: Untagged
+  m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsLeft: 60
+  countdownRate: 1
   timerTextObj: {fileID: 114613690341601990}
 --- !u!222 &222544209665531396
 CanvasRenderer:
