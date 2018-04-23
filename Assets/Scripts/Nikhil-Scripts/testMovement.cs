@@ -60,20 +60,22 @@ public class testMovement : MonoBehaviour {
             }
         }
 
-       
-            
-     
-        if (Input.GetMouseButton(0))
-        {
-            RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
-            {       //Now the agent is moved
-                agent.SetDestination(hit.point);
 
 
-            }
-        }
+        /*
+           if (Input.GetMouseButton(0))
+           {
+               RaycastHit hit;
+               Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+               if (Physics.Raycast(ray, out hit))
+               {       //Now the agent is moved
+                   agent.SetDestination(hit.point);
+
+
+               }
+           }
+               */
     }
+
 }

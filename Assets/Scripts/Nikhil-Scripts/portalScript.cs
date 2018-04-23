@@ -17,7 +17,8 @@ public class portalScript : MonoBehaviour {
         if(other.tag == "Player" && receiving==false) //When a portal encounters a player, uses the NavMesh Warp function to move it to the transport.position of the destination portal
         {
             destination.receiving = true;
-            testMovement playerMove = other.GetComponent<testMovement>();
+            
+            testMovementV3 playerMove = other.GetComponent<testMovementV3>();
             playerMove.disableMovement();
             playerMove.teleportTo(destination.transform.position);
             playerMove.enableMovement();

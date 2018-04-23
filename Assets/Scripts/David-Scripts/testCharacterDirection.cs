@@ -38,9 +38,19 @@ public class testCharacterDirection : NetworkBehaviour {
 	private void FindPlayerDirection() {
 		RaycastHit hit;
 		Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-		if (Physics.Raycast(ray, out hit)) {
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+        //if (Physics.Raycast(ray, out hit)) {
+
+        if (Physics.Raycast(ray, out hit)) {
 			transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
 		}
+        else
+        {
+            //Debug.Log("Hey");
+  //          transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+        }
+
+
 	}
 
 	// void FixedUpdate() {
