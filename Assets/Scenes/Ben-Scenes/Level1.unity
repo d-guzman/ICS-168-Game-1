@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 1b79f22a0e83b8f47aea83dec0526ad2, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1001 &254379257
 Prefab:
   m_ObjectHideFlags: 0
@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967039
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: b6423532a53e39247bf4c2a4749fea1c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 66f1a46447d27f04c9cf5295eb162fd3, type: 2}
 --- !u!4 &832450911 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4017845769475722, guid: eeda4f8b1dc1a9f49b175531d02db411,
@@ -1023,7 +1023,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4312717428037632, guid: 22eee6496a962264ea656bcbb396d948, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 655.1
+      value: 654.63
       objectReference: {fileID: 0}
     - target: {fileID: 4312717428037632, guid: 22eee6496a962264ea656bcbb396d948, type: 2}
       propertyPath: m_LocalPosition.z
