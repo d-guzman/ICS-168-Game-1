@@ -11,11 +11,18 @@ public class playerController : MonoBehaviour {
     public int punchDamage = 20;
     public int shootDamage = 10;
 
+   
+
     public float punchTime = 0.0f;
+    public float shootTime = 0.0f;
 
     public GameObject Fist;
     public weaponScript fistWeapon;
     public GameObject Gun;
+
+    public GameObject bullet;
+
+    //public weaponScript gunWeapon;
     
 
 
@@ -34,17 +41,28 @@ public class playerController : MonoBehaviour {
             Vector3 originalPos = Fist.transform.localPosition;
             Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 17f);
             fistWeapon.attackActivate();
-            Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 30 * Time.deltaTime);
+            Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 25 * Time.deltaTime);
             yield return new WaitForSeconds(0.4f);
             Fist.transform.localPosition = Vector3.MoveTowards(Fist.transform.localPosition, originalPos, 25 * Time.deltaTime);
             fistWeapon.attackDeactivate();
         }
     }
 
+    /*
+    private IEnumerator shooting()
+    {
+        if(shootTime <= Time.time)
+        {
+            shootTime = Time.time + 0.7f;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    */
     // Use this for initialization
     void Start () {
 
         fistWeapon = Fist.GetComponent<weaponScript>();
+        //gunWeapon = Gun.GetComponent<weaponScript>();
 		
 	}
 	
