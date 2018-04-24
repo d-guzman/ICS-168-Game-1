@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class enemyController : MonoBehaviour {
+    public GameObject player;
 
     public int health = 100;
 
@@ -20,13 +21,13 @@ public class enemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        if(health <= 0)
+        GetComponent<NavMeshAgent>().destination = player.transform.position;
+        if (health <= 0)
         {
             Debug.Log("Enemy is dead");
             Destroy(this.gameObject);
