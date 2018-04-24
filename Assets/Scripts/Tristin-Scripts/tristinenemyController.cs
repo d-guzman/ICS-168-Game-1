@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemyController : MonoBehaviour {
+public class tristinenemyController : MonoBehaviour {
+
+    public GameObject player;
 
     public int health = 100;
 
@@ -20,13 +22,14 @@ public class enemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        if(health <= 0)
+        player = GameObject.FindGameObjectWithTag("Player");
+        GetComponent<NavMeshAgent>().destination = player.transform.position;
+        if (health <= 0)
         {
             Debug.Log("Enemy is dead");
             Destroy(this.gameObject);
