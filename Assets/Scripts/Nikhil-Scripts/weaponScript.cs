@@ -10,6 +10,9 @@ public class weaponScript : MonoBehaviour {
     public int damage;
     public bool attacked;
     public BoxCollider box;
+    public bool bullet;
+    public int speed = 10;
+    public Vector3 travel;
 
 
 
@@ -48,10 +51,29 @@ public class weaponScript : MonoBehaviour {
     void Start () {
         box = GetComponent<BoxCollider>();
         box.enabled = false;
+        if(bullet)
+        {
+            bulletSetUp();
+        }
 	}
 	
+    public void bulletSetUp()
+    {
+        Vector3 travel = Vector3.forward;
+    }
+
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+
+        if(bullet)
+        {
+            bulletStuff();
+        }
 
 	}
+
+    public void bulletStuff()
+    {
+        transform.Translate(travel * Time.deltaTime * speed);
+    }
 }

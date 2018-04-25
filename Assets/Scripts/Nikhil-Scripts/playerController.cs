@@ -18,9 +18,10 @@ public class playerController : MonoBehaviour {
 
     public GameObject Fist;
     public weaponScript fistWeapon;
-    public GameObject Gun;
+    //public GameObject Gun;
+    //public GameObject bullet;
 
-    public GameObject bullet;
+    public gunScript gun;
 
     //public weaponScript gunWeapon;
     
@@ -48,16 +49,23 @@ public class playerController : MonoBehaviour {
         }
     }
 
-    /*
-    private IEnumerator shooting()
+    
+    private IEnumerator shooting() //This is the script 
     {
         if(shootTime <= Time.time)
         {
-            shootTime = Time.time + 0.7f;
+            shootTime = Time.time + 0.3f;
+
+            gun.shoot();
+            //Vector3 spot = transform.position;
+
+            //GameObject shotBullet = Instantiate(bullet, spot, transform.rotation);
+            //weaponScript bulletReference = shotBullet.GetComponent<weaponScript>();
+            //bulletReference.attackActivate();
             yield return new WaitForSeconds(0.1f);
         }
     }
-    */
+    
     // Use this for initialization
     void Start () {
 
@@ -75,7 +83,11 @@ public class playerController : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonDown(1)) //Right click to shoot
-            Debug.Log("Pressed secondary button.");
+        {
+            //Debug.Log("Shooting is going on");
+            StartCoroutine("shooting");
+        }
+            
 
     }
 }
