@@ -12,7 +12,6 @@ public class weaponScript : MonoBehaviour {
     public BoxCollider box;
 
 
-
     //When the player attacks, the playerController will activate the trigger collider of the weapon. Which will hurt the enemy when it detects an enemy.
 
     public void attackActivate()
@@ -34,7 +33,7 @@ public class weaponScript : MonoBehaviour {
             if(!attacked)
             {
                 //Debug.Log("Attacking");
-                other.GetComponent<enemyController>().hurtEnemy(damage); //This is where the damage is done
+                other.GetComponent<tristinenemyController>().hurtEnemy(damage); //This is where the damage is done
                 attacked = true;
             }
             else
@@ -48,10 +47,15 @@ public class weaponScript : MonoBehaviour {
     void Start () {
         box = GetComponent<BoxCollider>();
         box.enabled = false;
+
 	}
 	
+
+
 	// Update is called once per frame
 	void Update () {
 
+
 	}
+
 }

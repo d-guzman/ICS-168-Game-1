@@ -42,6 +42,16 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void addSomeTime(int num)
+    {
+        GM_cdTimerScript.addTime(num);
+    }
+
+    public void subtractSomeTime(int num)
+    {
+        GM_cdTimerScript.subtractTime(num);
+    }
+
     void Update() {
         updateTimerValues();
     }
