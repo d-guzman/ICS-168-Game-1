@@ -43,16 +43,15 @@ GameObject:
   - component: {fileID: 136375694429467870}
   - component: {fileID: 23783236748475544}
   - component: {fileID: 54505964949903788}
-  - component: {fileID: 114029509525628122}
   - component: {fileID: 195641495598859198}
   - component: {fileID: 114818854404651190}
   - component: {fileID: 114327200030211224}
-  - component: {fileID: 114935208692543306}
   - component: {fileID: 114056373462454498}
   - component: {fileID: 114749418863357622}
   - component: {fileID: 114547462834842268}
   - component: {fileID: 114231836484810940}
   - component: {fileID: 114487624471680854}
+  - component: {fileID: 114987842210150504}
   m_Layer: 8
   m_Name: PlayerV4withNetworking
   m_TagString: Player
@@ -384,20 +383,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114029509525628122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1283360516578814}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa113756b84df934f832edae513c11a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  agent: {fileID: 195641495598859198}
-  useNetworking: 0
 --- !u!114 &114056373462454498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -486,7 +471,6 @@ MonoBehaviour:
   health: 100
   punchDamage: 20
   shootDamage: 10
-  punchTime: 0
   shootTime: 0
   Fist: {fileID: 1272821472220474}
   fistWeapon: {fileID: 0}
@@ -531,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.2
+  m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -553,25 +537,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   useNetworking: 1
---- !u!114 &114935208692543306
+--- !u!114 &114987842210150504
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283360516578814}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8bdaeebb36d551408bfe92d7cf796f4, type: 3}
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  punchDamage: 20
-  shootDamage: 10
-  punchTime: 0
-  shootTime: 0
-  Fist: {fileID: 1272821472220474}
-  fistWeapon: {fileID: 0}
-  gun: {fileID: 114729770950010248}
+  m_Target: {fileID: 4254992872866082}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!135 &135982690648256104
 SphereCollider:
   m_ObjectHideFlags: 1

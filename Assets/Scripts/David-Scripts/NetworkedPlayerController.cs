@@ -11,8 +11,8 @@ public class NetworkedPlayerController : NetworkBehaviour {
 
    
 
-    public float punchTime = 0.0f;
-    public float shootTime = 0.0f;
+    private float punchTime;
+    private float shootTime;
 
     public GameObject Fist;
     public weaponScript fistWeapon;
@@ -25,11 +25,34 @@ public class NetworkedPlayerController : NetworkBehaviour {
     
 
 
-    public void punch()
+    [Command]
+    void CmdStartPunch()
     {
-        Vector3 originalPos = Fist.transform.localPosition;
-        Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 10f);
-        Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 20 * Time.deltaTime);
+        if(punchTime <= Time.time)
+        {
+            punchTime = Time.time + 0.7f;
+            Vector3 originalPos = Fist.transform.localPosition;
+            Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 17f);
+            fistWeapon.attackActivate();
+            Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 25 * Time.deltaTime);
+            StartCoroutine("pausePunchAnimation", originalPos);
+            // Fist.transform.localPosition = Vector3.MoveTowards(Fist.transform.localPosition, originalPos, 25 * Time.deltaTime);
+            // fistWeapon.attackDeactivate();
+        }
+        // Vector3 originalPos = Fist.transform.localPosition;
+        // Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 10f);
+        // Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 20 * Time.deltaTime);
+    }
+
+    [Command]
+    void CmdFinishPunch(Vector3 originalPos) {
+        Fist.transform.localPosition = Vector3.MoveTowards(Fist.transform.localPosition, originalPos, 25 * Time.deltaTime);
+        fistWeapon.attackDeactivate();
+    }
+
+    private IEnumerator pausePunchAnimation(Vector3 originalPos) {
+        yield return new WaitForSeconds(0.4f);
+        CmdFinishPunch(originalPos);
     }
 
     private IEnumerator punching()  //This is the script for the fist. Basically the first goes by a certain distance and tells the weaponScript to attack. It is an IEnumerator so the player can't spam the attack
@@ -47,7 +70,23 @@ public class NetworkedPlayerController : NetworkBehaviour {
         }
     }
 
-    
+    [Command]
+    void CmdShoot() {
+        if(shootTime <= Time.time)
+        {
+            shootTime = Time.time + 0.3f;
+
+            gun.shoot();
+            //Vector3 spot = transform.position;
+
+            //GameObject shotBullet = Instantiate(bullet, spot, transform.rotation);
+            //weaponScript bulletReference = shotBullet.GetComponent<weaponScript>();
+            //bulletReference.attackActivate();
+            // yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    // [Command]
     private IEnumerator shooting() //This is the script 
     {
         if(shootTime <= Time.time)
@@ -68,6 +107,8 @@ public class NetworkedPlayerController : NetworkBehaviour {
     void Start () {
 
         fistWeapon = Fist.GetComponent<weaponScript>();
+        punchTime = 0.0f;
+        shootTime = 0.0f;
         //gunWeapon = Gun.GetComponent<weaponScript>();
 		
 	}
@@ -84,13 +125,15 @@ public class NetworkedPlayerController : NetworkBehaviour {
 
         if (Input.GetMouseButtonDown(0)) //Left click to punch
         {
+            // CmdStartPunch();
             StartCoroutine("punching");
         }
 
         if (Input.GetMouseButtonDown(1)) //Right click to shoot
         {
             //Debug.Log("Shooting is going on");
-            StartCoroutine("shooting");
+            // StartCoroutine("shooting");
+            CmdShoot();
         }
             
 
