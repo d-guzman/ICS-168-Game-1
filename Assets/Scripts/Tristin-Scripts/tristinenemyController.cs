@@ -19,7 +19,7 @@ public class tristinenemyController : MonoBehaviour {
     public void hurtEnemy(int damage) //When the fist or bullet detect the enemy, they will call this function to hurt the enemy
     {
         health -= damage;
-        Debug.Log("Oh no! I, the enemy have taken " + damage + " damage and only have " + health + " health remaining!");
+        Debug.Log("Oh no! I, the enemy, have taken " + damage + " damage and only have " + health + " health remaining!");
 
     }
 

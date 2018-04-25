@@ -20,7 +20,7 @@ public class bulletScript : MonoBehaviour {
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<enemyController>().hurtEnemy(damage); //This is where the damage is done
+            other.GetComponent<tristinenemyController>().hurtEnemy(damage); //This is where the damage is done
             Destroy(this.gameObject);
         }
     }

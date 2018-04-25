@@ -33,7 +33,7 @@ public class weaponScript : MonoBehaviour {
             if(!attacked)
             {
                 //Debug.Log("Attacking");
-                other.GetComponent<enemyController>().hurtEnemy(damage); //This is where the damage is done
+                other.GetComponent<tristinenemyController>().hurtEnemy(damage); //This is where the damage is done
                 attacked = true;
             }
             else
