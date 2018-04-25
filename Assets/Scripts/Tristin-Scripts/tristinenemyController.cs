@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class tristinenemyController : MonoBehaviour {
-    bool engaged; 
-
+    bool engaged = false;
+    float wepRange = 1;
+    float engageDist = 8;
     public GameObject[] players;
-
     public GameObject target_player;
 
     public int health = 100;
@@ -42,12 +42,14 @@ public class tristinenemyController : MonoBehaviour {
                 minDist = dist;
             }
         }
-        if ((minDist < 10 || engaged) && minDist > 1) //Checks to see if Enemy is in range of closest player
-            if (!engaged)
-                engaged = true;
-            GetComponent<NavMeshAgent>().destination = target_player.transform.position;
-        if (minDist < 1)
+        if (minDist <= wepRange)
             Debug.Log("Enemy attacking Player");
+        else if (minDist <= engageDist || engaged) //Checks to see if Enemy is in range of closest player
+        {
+            engaged = true;
+            GetComponent<NavMeshAgent>().destination = target_player.transform.position;
+        }
+        
         if (health <= 0)
         {
             Debug.Log("Enemy is dead");
