@@ -9,6 +9,10 @@ public class NetworkedPlayerController : NetworkBehaviour {
     public int punchDamage = 20;
     public int shootDamage = 10;
 
+    public GameObject bullet;
+
+    public Transform shootPoint;
+
    
 
     private float punchTime;
@@ -19,7 +23,7 @@ public class NetworkedPlayerController : NetworkBehaviour {
     //public GameObject Gun;
     //public GameObject bullet;
 
-    public gunScript gun;
+    // public NetworkedGunScript gun;
 
     //public weaponScript gunWeapon;
     
@@ -71,12 +75,12 @@ public class NetworkedPlayerController : NetworkBehaviour {
     }
 
     [Command]
-    void CmdShoot() {
+    void CmdShooting() {
         if(shootTime <= Time.time)
         {
             shootTime = Time.time + 0.3f;
 
-            gun.shoot();
+            CmdShoot();
             //Vector3 spot = transform.position;
 
             //GameObject shotBullet = Instantiate(bullet, spot, transform.rotation);
@@ -86,22 +90,32 @@ public class NetworkedPlayerController : NetworkBehaviour {
         }
     }
 
-    // [Command]
-    private IEnumerator shooting() //This is the script 
+    [Command]
+	public void CmdShoot()
     {
-        if(shootTime <= Time.time)
-        {
-            shootTime = Time.time + 0.3f;
-
-            gun.shoot();
-            //Vector3 spot = transform.position;
-
-            //GameObject shotBullet = Instantiate(bullet, spot, transform.rotation);
-            //weaponScript bulletReference = shotBullet.GetComponent<weaponScript>();
-            //bulletReference.attackActivate();
-            yield return new WaitForSeconds(0.1f);
-        }
+        //Debug.Log("BANG");
+        GameObject bulletInstance =   Instantiate(bullet, shootPoint.position, transform.rotation);
+        bulletScript bulletScriptInstance = bulletInstance.GetComponent<bulletScript>(); //The bullet has a default damage, but here the gun overrides it 
+        bulletScriptInstance.damage = shootDamage;
+		NetworkServer.Spawn(bulletInstance);
     }
+
+    // [Command]
+    // private IEnumerator shooting() //This is the script 
+    // {
+    //     if(shootTime <= Time.time)
+    //     {
+    //         shootTime = Time.time + 0.3f;
+
+    //         gun.shoot();
+    //         //Vector3 spot = transform.position;
+
+    //         //GameObject shotBullet = Instantiate(bullet, spot, transform.rotation);
+    //         //weaponScript bulletReference = shotBullet.GetComponent<weaponScript>();
+    //         //bulletReference.attackActivate();
+    //         yield return new WaitForSeconds(0.1f);
+    //     }
+    // }
     
     // Use this for initialization
     void Start () {
@@ -133,7 +147,7 @@ public class NetworkedPlayerController : NetworkBehaviour {
         {
             //Debug.Log("Shooting is going on");
             // StartCoroutine("shooting");
-            CmdShoot();
+            CmdShooting();
         }
             
 
