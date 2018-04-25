@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class tristinenemyController : MonoBehaviour {
+    bool engaged; 
 
-    public GameObject player;
+    public GameObject[] players;
+
+    public GameObject target_player;
 
     public int health = 100;
 
@@ -22,13 +25,29 @@ public class tristinenemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+        players = GameObject.FindGameObjectsWithTag("Player"); //Makes a list of all player objects at start
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        player = GameObject.FindGameObjectWithTag("Player");
-        GetComponent<NavMeshAgent>().destination = player.transform.position;
+        float minDist = Mathf.Infinity;                //The distance from the enemy to the closest player
+        Vector3 currentPos = transform.position;
+        foreach (GameObject t in players)
+        {
+            float dist = Vector3.Distance(t.transform.position, currentPos);
+            if (dist < minDist)
+            {
+                target_player = t;
+                minDist = dist;
+            }
+        }
+        if ((minDist < 10 || engaged) && minDist > 1) //Checks to see if Enemy is in range of closest player
+            if (!engaged)
+                engaged = true;
+            GetComponent<NavMeshAgent>().destination = target_player.transform.position;
+        if (minDist < 1)
+            Debug.Log("Enemy attacking Player");
         if (health <= 0)
         {
             Debug.Log("Enemy is dead");
