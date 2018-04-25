@@ -426,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   agent: {fileID: 195968521212777790}
-  useNetworking: 0
+  useNetworking: 1
 --- !u!114 &114940882226181938
 MonoBehaviour:
   m_ObjectHideFlags: 1
