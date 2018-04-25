@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bulletScript : MonoBehaviour {
 
-    public float speed = 10f;
+    public float speed = 30f;
 
     public Vector3 travel;
 

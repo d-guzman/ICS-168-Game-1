@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class enemyController : MonoBehaviour {
 
+    //This is outdated, please do not use this. tristinenemyController is the current one
+
     public int health = 100;
 
     public float lookRadius = 10f;

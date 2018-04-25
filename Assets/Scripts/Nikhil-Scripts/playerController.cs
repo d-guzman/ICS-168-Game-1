@@ -54,7 +54,7 @@ public class playerController : MonoBehaviour {
     {
         if(shootTime <= Time.time)
         {
-            shootTime = Time.time + 0.3f;
+            shootTime = Time.time + 0.2f;
 
             gun.shoot();
             //Vector3 spot = transform.position;
