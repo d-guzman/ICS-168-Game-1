@@ -3622,29 +3622,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &797637554 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1467041886320904, guid: a6aad30c655dd904e914a10c01bcfc63,
-    type: 2}
-  m_PrefabInternal: {fileID: 2124443830}
---- !u!114 &797637555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 797637554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ee4ea96a58b4b94f8722a8aa15e896c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 1174065833582166, guid: bbb12cfd8fceba64589bc0163a9c1914, type: 2}
-  shootPoint: {fileID: 1250852740}
---- !u!4 &797637559 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4939208181312234, guid: a6aad30c655dd904e914a10c01bcfc63,
-    type: 2}
-  m_PrefabInternal: {fileID: 2124443830}
 --- !u!1 &803908546
 GameObject:
   m_ObjectHideFlags: 0
@@ -5614,34 +5591,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5606601d14695fe498eda8d2a8ec2a00, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1250852739
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1250852740}
-  m_Layer: 8
-  m_Name: shootPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1250852740
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1250852739}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.503}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 797637559}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1281504766 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 5606601d14695fe498eda8d2a8ec2a00, type: 3}
@@ -8937,19 +8886,7 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 539911784}
-    - target: {fileID: 114897106675566800, guid: a6aad30c655dd904e914a10c01bcfc63,
-        type: 2}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 1174065833582166, guid: bbb12cfd8fceba64589bc0163a9c1914,
-        type: 2}
-    - target: {fileID: 114897106675566800, guid: a6aad30c655dd904e914a10c01bcfc63,
-        type: 2}
-      propertyPath: gun
-      value: 
-      objectReference: {fileID: 797637555}
-    m_RemovedComponents:
-    - {fileID: 114536604883727518, guid: a6aad30c655dd904e914a10c01bcfc63, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6aad30c655dd904e914a10c01bcfc63, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2139145071

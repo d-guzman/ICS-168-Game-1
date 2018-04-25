@@ -40,9 +40,24 @@ GameObject:
   - component: {fileID: 33913134851244834}
   - component: {fileID: 65970558154242382}
   - component: {fileID: 23429117021949978}
-  - component: {fileID: 114536604883727518}
+  - component: {fileID: 114683962503794834}
   m_Layer: 8
   m_Name: Right Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1602972335485062
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4114699023044320}
+  m_Layer: 8
+  m_Name: shootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,6 +123,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4114699023044320
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602972335485062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4939208181312234}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4293241707980516
 Transform:
   m_ObjectHideFlags: 1
@@ -143,7 +171,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.549, y: 0.136, z: 0.631}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4114699023044320}
   m_Father: {fileID: 4096025701062548}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -345,7 +374,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467041886320904}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -378,20 +407,6 @@ MonoBehaviour:
   agent: {fileID: 195445697218818934}
   useNetworking: 0
   movementAllowed: 0
---- !u!114 &114536604883727518
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1467041886320904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ceea4399cc0e0458bc1654f031da00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  attacked: 0
-  box: {fileID: 0}
 --- !u!114 &114627932930619804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,6 +421,20 @@ MonoBehaviour:
   damage: 10
   attacked: 1
   box: {fileID: 65735440179004198}
+--- !u!114 &114683962503794834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467041886320904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee4ea96a58b4b94f8722a8aa15e896c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1174065833582166, guid: bbb12cfd8fceba64589bc0163a9c1914, type: 2}
+  shootPoint: {fileID: 4114699023044320}
+  damage: 20
 --- !u!114 &114897106675566800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,8 +453,7 @@ MonoBehaviour:
   shootTime: 0
   Fist: {fileID: 1713779151621314}
   fistWeapon: {fileID: 0}
-  Gun: {fileID: 1467041886320904}
-  bullet: {fileID: 0}
+  gun: {fileID: 114683962503794834}
 --- !u!114 &114972561006320500
 MonoBehaviour:
   m_ObjectHideFlags: 1

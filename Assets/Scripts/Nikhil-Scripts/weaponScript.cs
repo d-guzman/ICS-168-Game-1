@@ -10,10 +10,6 @@ public class weaponScript : MonoBehaviour {
     public int damage;
     public bool attacked;
     public BoxCollider box;
-    public bool bullet;
-    public int speed = 10;
-    public Vector3 travel;
-
 
 
     //When the player attacks, the playerController will activate the trigger collider of the weapon. Which will hurt the enemy when it detects an enemy.
@@ -51,29 +47,15 @@ public class weaponScript : MonoBehaviour {
     void Start () {
         box = GetComponent<BoxCollider>();
         box.enabled = false;
-        if(bullet)
-        {
-            bulletSetUp();
-        }
+
 	}
 	
-    public void bulletSetUp()
-    {
-        Vector3 travel = Vector3.forward;
-    }
+
 
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 
-        if(bullet)
-        {
-            bulletStuff();
-        }
 
 	}
 
-    public void bulletStuff()
-    {
-        transform.Translate(travel * Time.deltaTime * speed);
-    }
 }
