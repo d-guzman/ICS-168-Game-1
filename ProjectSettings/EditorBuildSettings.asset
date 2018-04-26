@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/David-Scenes/David_Test.unity
-    guid: 91ebef32691fd1a4ebdbf7874ebe7ccc
-  - enabled: 1
     path: Assets/Scenes/Nikhil-Scenes/Main Menu.unity
     guid: 9ab6aecbafca8f846a58fa0dd810b767
+  - enabled: 1
+    path: Assets/Scenes/David-Scenes/David_Test.unity
+    guid: 91ebef32691fd1a4ebdbf7874ebe7ccc
