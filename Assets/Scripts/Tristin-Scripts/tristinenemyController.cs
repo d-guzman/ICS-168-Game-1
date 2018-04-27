@@ -82,7 +82,7 @@ public class tristinenemyController : NetworkBehaviour {
         {
             engaged = true;
             GetComponent<NavMeshAgent>().destination = target_player.transform.position;
-            RpcSetEnemyDestination();
+            // RpcSetEnemyDestination();
         }
 
         checkDeath();
