@@ -50,8 +50,12 @@ public class tristinenemyController : NetworkBehaviour {
 	// Update is called once per frame
 	void Update () {
         // dont let clients execute enemy updates
-        if (!isServer) {
-            return;
+        // if (!isServer) {
+        //     return;
+        // }
+
+        if (players.Length < 2) {
+            players = GameObject.FindGameObjectsWithTag("Player"); //Makes a list of all player objects at start
         }
 
         float minDist = Mathf.Infinity;                //The distance from the enemy to the closest player
@@ -85,7 +89,7 @@ public class tristinenemyController : NetworkBehaviour {
 
 	}
 
-    // Makes sure the client is updated from server
+    // Makes sure the client is updated from server (?)
     [ClientRpc]
     void RpcSetEnemyDestination() {
         GetComponent<NavMeshAgent>().destination = target_player.transform.position;

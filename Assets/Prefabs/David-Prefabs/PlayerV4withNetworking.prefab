@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ceea4399cc0e0458bc1654f031da00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   attacked: 1
   box: {fileID: 65692596617037570}
 --- !u!114 &114487624471680854
