@@ -78,11 +78,18 @@ public class tristinenemyController : NetworkBehaviour {
         {
             engaged = true;
             GetComponent<NavMeshAgent>().destination = target_player.transform.position;
+            RpcSetEnemyDestination();
         }
 
         checkDeath();
 
 	}
+
+    // Makes sure the client is updated from server
+    [ClientRpc]
+    void RpcSetEnemyDestination() {
+        GetComponent<NavMeshAgent>().destination = target_player.transform.position;
+    }
 
     public void checkDeath()
     {
