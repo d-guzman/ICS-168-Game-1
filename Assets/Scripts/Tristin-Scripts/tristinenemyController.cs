@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Networking;
 
-public class tristinenemyController : MonoBehaviour {
+public class tristinenemyController : NetworkBehaviour {
     bool engaged = false;
     float wepRange = 1;
     float engageDist = 8;
     public GameObject[] players;
     public GameObject target_player;
 
-    public int health = 100;
+    public int maxHealth = 100;
+    
+    [SyncVar]
+    public int health;
 
     public float lookRadius = 10f;
 
@@ -27,6 +31,10 @@ public class tristinenemyController : MonoBehaviour {
 
     public void hurtEnemy(int damage) //When the fist or bullet detect the enemy, they will call this function to hurt the enemy
     {
+        if (!isServer) {
+            return;
+        }
+
         health -= damage;
         //Debug.Log("Oh no! I, the enemy, have taken " + damage + " damage and only have " + health + " health remaining!");
 
@@ -36,10 +44,16 @@ public class tristinenemyController : MonoBehaviour {
 	void Start () {
         players = GameObject.FindGameObjectsWithTag("Player"); //Makes a list of all player objects at start
         gameManagerReference = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        health = maxHealth;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        // dont let clients execute enemy updates
+        if (!isServer) {
+            return;
+        }
+
         float minDist = Mathf.Infinity;                //The distance from the enemy to the closest player
         Vector3 currentPos = transform.position;
         foreach (GameObject t in players)
