@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : NetworkBehaviour {
     public static GameManager instance = null;
 
     private bool gameStarted;
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour {
     private GameObject GM_cdTimer = null;
     private TimerScript GM_cdTimerScript = null;
     // These varables are going to serve as a sort of safe storage for any values that come from the Timer.
+
+    [SyncVar]
     private int GM_secondsLeft = 60;    // This is an amount of seconds that should only appear for the on the first level.
     private float GM_countdownRate = 1f;     //This should only be appearing for the first level.
 
@@ -44,15 +47,34 @@ public class GameManager : MonoBehaviour {
 
     public void addSomeTime(int num)
     {
-        GM_cdTimerScript.addTime(num);
+        if (GM_cdTimerScript != null)
+            GM_cdTimerScript.addTime(num);
     }
 
     public void subtractSomeTime(int num)
     {
-        GM_cdTimerScript.subtractTime(num);
+        if (GM_cdTimerScript != null)
+            GM_cdTimerScript.subtractTime(num);
     }
 
     void Update() {
+        if (GM_cdTimer == null) {
+            GM_cdTimer = GameObject.FindGameObjectWithTag("Timer");
+        }
+
+        if (GM_cdTimerScript == null) {
+            GM_cdTimerScript = GM_cdTimer.GetComponentInChildren<TimerScript>();
+        }
+
+        if (!isServer) {
+            return;
+        }
+
+        RpcUpdateTimerValues();
+    }
+
+    [ClientRpc]
+    private void RpcUpdateTimerValues() {
         updateTimerValues();
     }
 

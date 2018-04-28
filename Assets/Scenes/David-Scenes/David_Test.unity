@@ -428,6 +428,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 1929687618346884, guid: 77ab57d52539fd54da44d53a01d37ab5, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77ab57d52539fd54da44d53a01d37ab5, type: 2}
   m_IsPrefabParent: 0
@@ -1509,6 +1513,15 @@ Prefab:
     - target: {fileID: 1146628575782690, guid: 5f943f67815df9642b38df874ee41bf2, type: 2}
       propertyPath: m_TagString
       value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146628575782690, guid: 5f943f67815df9642b38df874ee41bf2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114219965783171172, guid: 5f943f67815df9642b38df874ee41bf2,
+        type: 2}
+      propertyPath: m_ServerOnly
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f943f67815df9642b38df874ee41bf2, type: 2}

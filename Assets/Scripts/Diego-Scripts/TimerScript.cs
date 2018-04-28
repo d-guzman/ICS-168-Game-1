@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(UnityEngine.UI.Text))]
-public class TimerScript : MonoBehaviour {
+public class TimerScript : NetworkBehaviour {
     [Tooltip("secondsLeft is the amount of seconds that this timer has left before it reaches 0.")]
+
+    [SyncVar]
     public int secondsLeft = 60;
     [Tooltip("countdownRate is how long it takes before the timer decrements by 1 second. A value of 1 means the timer decrements at 1 second per second.")]
     public float countdownRate = 1f;
