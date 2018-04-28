@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class tristinenemyController : NetworkBehaviour {
     bool engaged = false;
@@ -12,8 +13,8 @@ public class tristinenemyController : NetworkBehaviour {
     public GameObject target_player;
 
     public int maxHealth = 100;
-    
-    [SyncVar]
+
+    [SyncVar(hook = "OnChangeHealth")]
     public int health;
 
     public float lookRadius = 10f;
@@ -23,6 +24,9 @@ public class tristinenemyController : NetworkBehaviour {
 
     public int timeDeathValue = 5; //time the player gets on enemy death
     public int timeAttackValue = 2; //time the player loses on attack
+
+
+    public RectTransform healthBar; 
 
     NavMeshAgent agent;
 
@@ -36,8 +40,22 @@ public class tristinenemyController : NetworkBehaviour {
         }
 
         health -= damage;
+        healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
+        StartCoroutine("knockBack");
         //Debug.Log("Oh no! I, the enemy, have taken " + damage + " damage and only have " + health + " health remaining!");
+    }
 
+    void OnChangeHealth(int health)
+    {
+        healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
+    }
+
+    public IEnumerator knockBack()
+    {
+        Debug.Log("Knock back");
+        agent.velocity = -agent.velocity;
+        yield return new WaitForSeconds(0.2f);
+        agent.velocity = -agent.velocity;
     }
 
 	// Use this for initialization
@@ -45,6 +63,7 @@ public class tristinenemyController : NetworkBehaviour {
         players = GameObject.FindGameObjectsWithTag("Player"); //Makes a list of all player objects at start
         gameManagerReference = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         health = maxHealth;
+        agent = GetComponent<NavMeshAgent>();
     }
 	
 	// Update is called once per frame

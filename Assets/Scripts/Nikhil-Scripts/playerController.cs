@@ -40,11 +40,12 @@ public class playerController : MonoBehaviour {
         {
             punchTime = Time.time + 0.7f;
             Vector3 originalPos = Fist.transform.localPosition;
-            Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 17f);
+            Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 1f);
             fistWeapon.attackActivate();
-            Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 25 * Time.deltaTime);
+            //Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 100 * Time.deltaTime);
+            Fist.transform.localPosition = desiredPos; //Vector3.MoveTowards(originalPos, desiredPos, 100 * Time.deltaTime);
             yield return new WaitForSeconds(0.4f);
-            Fist.transform.localPosition = Vector3.MoveTowards(Fist.transform.localPosition, originalPos, 25 * Time.deltaTime);
+            Fist.transform.localPosition = originalPos; //Vector3.MoveTowards(Fist.transform.localPosition, originalPos, 100 * Time.deltaTime);
             fistWeapon.attackDeactivate();
         }
     }

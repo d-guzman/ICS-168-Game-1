@@ -63,13 +63,13 @@ public class NetworkedPlayerController : NetworkBehaviour {
     {
         if(punchTime <= Time.time)
         {
-            punchTime = Time.time + 0.7f;
+            punchTime = Time.time + 0.6f;
             Vector3 originalPos = Fist.transform.localPosition;
-            Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 17f);
+            Vector3 desiredPos = new Vector3(originalPos.x, originalPos.y, originalPos.z + 0.7f);
             fistWeapon.attackActivate();
-            Fist.transform.localPosition = Vector3.MoveTowards(originalPos, desiredPos, 25 * Time.deltaTime);
+            Fist.transform.localPosition = desiredPos; //Vector3.MoveTowards(originalPos, desiredPos, 25 * Time.deltaTime);
             yield return new WaitForSeconds(0.4f);
-            Fist.transform.localPosition = Vector3.MoveTowards(Fist.transform.localPosition, originalPos, 25 * Time.deltaTime);
+            Fist.transform.localPosition = originalPos;  //Vector3.MoveTowards(Fist.transform.localPosition, originalPos, 25 * Time.deltaTime);
             fistWeapon.attackDeactivate();
         }
     }
