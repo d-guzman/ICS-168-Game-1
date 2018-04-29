@@ -8,7 +8,7 @@ public class bulletScript : MonoBehaviour {
 
     public Vector3 travel;
 
-    public int damage;
+    public int damage = 12;
 
     // Use this for initialization
     void Start () {
@@ -20,7 +20,9 @@ public class bulletScript : MonoBehaviour {
     {
         if (other.tag == "Enemy")
         {
+            other.GetComponent<tristinenemyController>().lastAttackWas = 2; //this means that the latest attack was a bullet
             other.GetComponent<tristinenemyController>().hurtEnemy(damage); //This is where the damage is done
+            other.GetComponent<tristinenemyController>().bulletKnockback();
             Destroy(this.gameObject);
         }
     }

@@ -6,8 +6,8 @@ using UnityEngine.Networking;
 public class NetworkedPlayerController : NetworkBehaviour {
 
 	public int health = 100;
-    public int punchDamage = 20;
-    public int shootDamage = 10;
+    public int punchDamage = 40;
+    public int shootDamage = 200;
 
     public GameObject bullet;
 
@@ -96,7 +96,7 @@ public class NetworkedPlayerController : NetworkBehaviour {
         //Debug.Log("BANG");
         GameObject bulletInstance =   Instantiate(bullet, shootPoint.position, transform.rotation);
         bulletScript bulletScriptInstance = bulletInstance.GetComponent<bulletScript>(); //The bullet has a default damage, but here the gun overrides it 
-        bulletScriptInstance.damage = shootDamage;
+        //bulletScriptInstance.damage = shootDamage;
 		NetworkServer.Spawn(bulletInstance);
     }
 

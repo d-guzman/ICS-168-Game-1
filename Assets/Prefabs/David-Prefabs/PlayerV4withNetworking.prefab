@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 1272821472220474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.426, y: 0, z: 0.535}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 4826362554135956}
   m_RootOrder: 1
@@ -369,7 +369,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 4, y: 4, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65892102547093560
 BoxCollider:
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ceea4399cc0e0458bc1654f031da00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 40
   attacked: 1
   box: {fileID: 65692596617037570}
 --- !u!114 &114487624471680854

@@ -33,7 +33,10 @@ public class weaponScript : MonoBehaviour {
             if(!attacked)
             {
                 //Debug.Log("Attacking");
+                other.GetComponent<tristinenemyController>().lastAttackWas = 1; //this means the last attack was a punch
                 other.GetComponent<tristinenemyController>().hurtEnemy(damage); //This is where the damage is done
+                other.GetComponent<tristinenemyController>().punchKnockback();
+               
                 attacked = true;
             }
             else

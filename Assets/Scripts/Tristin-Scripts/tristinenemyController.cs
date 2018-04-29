@@ -22,8 +22,10 @@ public class tristinenemyController : NetworkBehaviour {
     public float attackTime = 0.0f; //If attackTime <= Time.time, then attack. During attack, make attackTime = Time.time + attackWaitTime
     public float attackWaitTime = 0.5f; //this basically means the enemy can attack every attackWaitTime seconds 
 
-    public int timeDeathValue = 5; //time the player gets on enemy death
+    public int timeDeathValue = 4; //time the player gets on enemy death
     public int timeAttackValue = 2; //time the player loses on attack
+
+    public int lastAttackWas = 0; //this indicates what the last attack was. Will be used to award time points
 
 
     public RectTransform healthBar; 
@@ -41,8 +43,18 @@ public class tristinenemyController : NetworkBehaviour {
 
         health -= damage;
         healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
-        StartCoroutine("knockBack");
+        //StartCoroutine("knockBack");
         //Debug.Log("Oh no! I, the enemy, have taken " + damage + " damage and only have " + health + " health remaining!");
+    }
+
+    public void bulletKnockback()
+    {
+        StartCoroutine("knockBack", 2);
+    }
+
+    public void punchKnockback()
+    {
+        StartCoroutine("knockBack", 4);
     }
 
     void OnChangeHealth(int health)
@@ -50,9 +62,10 @@ public class tristinenemyController : NetworkBehaviour {
         healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
     }
 
-    public IEnumerator knockBack()
+    public IEnumerator knockBack(int tim)
     {
-        Debug.Log("Knock back");
+        //Debug.Log("Knock back for "+tim);
+
         agent.velocity = -agent.velocity;
         yield return new WaitForSeconds(0.2f);
         agent.velocity = -agent.velocity;
@@ -120,6 +133,10 @@ public class tristinenemyController : NetworkBehaviour {
         if (health <= 0)
         {
             Debug.Log("Enemy is dead");
+            if(lastAttackWas == 1 )
+            {
+                timeDeathValue = timeDeathValue * 2;
+            }
             gameManagerReference.addSomeTime(timeDeathValue);
             Destroy(this.gameObject);
         }
