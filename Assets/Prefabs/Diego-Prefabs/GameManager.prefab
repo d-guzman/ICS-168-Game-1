@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114219965783171172}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adb4531a14f0a14bb64f83056ef9ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCount: 0
+  portal: {fileID: 1635194601577864, guid: fe4d67752571410489e70cc5fb9ef9ae, type: 2}
+  enemyDeathSpot: {fileID: 0}
+  enemyDeathPosition: {x: 0, y: 0, z: 0}
+  enemyDeathRoation: {x: 0, y: 0, z: 0, w: 0}
+  portalExists: 0

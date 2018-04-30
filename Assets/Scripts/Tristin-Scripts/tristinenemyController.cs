@@ -77,6 +77,7 @@ public class tristinenemyController : NetworkBehaviour {
         gameManagerReference = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         health = maxHealth;
         agent = GetComponent<NavMeshAgent>();
+        gameManagerReference.enemyCount += 1;
     }
 	
 	// Update is called once per frame
@@ -132,12 +133,14 @@ public class tristinenemyController : NetworkBehaviour {
 
         if (health <= 0)
         {
-            Debug.Log("Enemy is dead");
+            //Debug.Log("Enemy is dead");
             if(lastAttackWas == 1 )
             {
                 timeDeathValue = timeDeathValue * 2;
             }
             gameManagerReference.addSomeTime(timeDeathValue);
+            gameManagerReference.enemyCount -= 1;
+            gameManagerReference.lastEnemyKilled(this.transform);
             Destroy(this.gameObject);
         }
 

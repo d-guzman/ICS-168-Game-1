@@ -9,6 +9,22 @@ public class GameManager : NetworkBehaviour {
     private bool gameStarted;
     private bool gamePaused;
 
+    //public GameObject[] enemies;
+
+    public int enemyCount;
+
+    public GameObject portal;
+
+    public Transform enemyDeathSpot;
+
+    public Vector3 enemyDeathPosition;
+    public Quaternion enemyDeathRoation;
+
+    public bool enemyKilled = false;
+
+    public bool portalExists = false;
+   
+
     // These should be references to any CountdownTimer prefab that exists in our scenes.
     private GameObject GM_cdTimer = null;
     private TimerScript GM_cdTimerScript = null;
@@ -27,12 +43,19 @@ public class GameManager : NetworkBehaviour {
 
         DontDestroyOnLoad(gameObject);
         UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+
+        ///enemies = GameObject.FindGameObjectsWithTag("Enemy"); //Makes a list of all player objects at start
     }
+
+
+    
 
     /// <summary>
     /// <para>This function is called every time a new scene is loaded. Values that need to be transferred between scenes are transferred through here.</para>
     /// </summary>
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode) {
+            enemyKilled = false;
+            portalExists = false;
         if (instance == this) {
             GM_cdTimer = GameObject.FindGameObjectWithTag("Timer");
             if (GM_cdTimer != null) { GM_cdTimerScript = GM_cdTimer.GetComponentInChildren<TimerScript>(); }
@@ -43,6 +66,24 @@ public class GameManager : NetworkBehaviour {
                 GM_cdTimerScript.countdownRate = GM_countdownRate;  // Do the same as above, but for the countdown rate.
             }
         }
+    }
+
+    public override void OnStartLocalPlayer()
+    {
+        Debug.Log("WHEN DOES THIS HAPPPEN");
+    }
+
+    
+
+
+    public void lastEnemyKilled(Transform enemyTransform)
+    {
+        //enemyDeathSpot = enemyTransform;
+        enemyKilled = true;
+        enemyDeathPosition = new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z);
+        enemyDeathRoation = enemyTransform.rotation;
+        
+        //Debug.Log("The enemyDeathSpot is " + enemyDeathSpot.position);
     }
 
     public void addSomeTime(int num)
@@ -71,6 +112,21 @@ public class GameManager : NetworkBehaviour {
         }
 
         RpcUpdateTimerValues();
+
+
+        if(enemyCount <= 0)
+        {
+            //Debug.Log("Yup this is going on!"+enemyDeathSpot.position);
+            if(portalExists == false)
+            {
+                if (enemyKilled)
+                {
+                    Instantiate(portal, enemyDeathPosition, enemyDeathRoation);
+                    portalExists = true;
+                }
+            }
+           
+        }
     }
 
     [ClientRpc]

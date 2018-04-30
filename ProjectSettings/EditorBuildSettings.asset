@@ -9,5 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Nikhil-Scenes/Main Menu.unity
     guid: 9ab6aecbafca8f846a58fa0dd810b767
   - enabled: 1
+    path: Assets/Scenes/Ben-Scenes/Level1.unity
+    guid: d9be2033a41a0a5499dce95da343020d
+  - enabled: 1
+    path: Assets/Scenes/Ben-Scenes/Level2.unity
+    guid: ecb015ea28b4dc54280ed5a4243b9d79
+  - enabled: 1
+    path: Assets/Scenes/Parker_Scenes/BuildingAndOutside.unity
+    guid: f00da99f88c304d46aed0e8425b7524b
+  - enabled: 0
     path: Assets/Scenes/David-Scenes/David_Test.unity
     guid: 91ebef32691fd1a4ebdbf7874ebe7ccc

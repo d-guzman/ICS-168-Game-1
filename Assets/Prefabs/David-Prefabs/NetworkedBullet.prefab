@@ -162,6 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a57ab34ffece64ebca4f7b7846581d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 23
+  speed: 30
   travel: {x: 0, y: 0, z: 0}
   damage: 12
