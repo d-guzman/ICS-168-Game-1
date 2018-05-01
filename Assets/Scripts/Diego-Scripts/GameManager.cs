@@ -124,8 +124,9 @@ public class GameManager : NetworkBehaviour {
             {
                 if (enemyKilled)
                 {
-                    Instantiate(portal, enemyDeathPosition, enemyDeathRoation);
+                    GameObject portalInstance = Instantiate(portal, enemyDeathPosition, enemyDeathRoation);
                     portalExists = true;
+                    NetworkServer.Spawn(portalInstance);
                 }
             }
            
