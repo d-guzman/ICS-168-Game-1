@@ -32,6 +32,8 @@ public class tristinenemyController : NetworkBehaviour {
 
     NavMeshAgent agent;
 
+    GameObject gameController;
+
     GameManager gameManagerReference;
     
 
@@ -74,7 +76,10 @@ public class tristinenemyController : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
         players = GameObject.FindGameObjectsWithTag("Player"); //Makes a list of all player objects at start
-        gameManagerReference = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+        if (gameController != null) {
+            gameManagerReference = gameController.GetComponent<GameManager>();
+        }
         health = maxHealth;
         agent = GetComponent<NavMeshAgent>();
         gameManagerReference.enemyCount += 1;
@@ -86,6 +91,9 @@ public class tristinenemyController : NetworkBehaviour {
         // if (!isServer) {
         //     return;
         // }
+
+        if (gameController == null) { gameController = GameObject.FindGameObjectWithTag("GameController"); }
+        if (gameManagerReference == null && gameController != null) { gameManagerReference = gameController.GetComponent<GameManager>(); }
 
         if (players.Length < 2) {
             players = GameObject.FindGameObjectsWithTag("Player"); //Makes a list of all player objects at start

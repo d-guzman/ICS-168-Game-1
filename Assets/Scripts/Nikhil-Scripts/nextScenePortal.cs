@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
-public class nextScenePortal : MonoBehaviour {
+public class nextScenePortal : NetworkBehaviour {
 
     private static string NameFromIndex(int BuildIndex)
     {

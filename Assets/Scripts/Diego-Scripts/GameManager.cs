@@ -26,8 +26,8 @@ public class GameManager : NetworkBehaviour {
    
 
     // These should be references to any CountdownTimer prefab that exists in our scenes.
-    private GameObject GM_cdTimer = null;
-    private TimerScript GM_cdTimerScript = null;
+    public GameObject GM_cdTimer = null;
+    public TimerScript GM_cdTimerScript = null;
     // These varables are going to serve as a sort of safe storage for any values that come from the Timer.
 
     [SyncVar]
@@ -54,9 +54,11 @@ public class GameManager : NetworkBehaviour {
     /// <para>This function is called every time a new scene is loaded. Values that need to be transferred between scenes are transferred through here.</para>
     /// </summary>
     void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode) {
+        Debug.Log("game manager transferring data btw scenes.");
             enemyKilled = false;
             portalExists = false;
         if (instance == this) {
+            Debug.Log("instance is correct.");
             GM_cdTimer = GameObject.FindGameObjectWithTag("Timer");
             if (GM_cdTimer != null) { GM_cdTimerScript = GM_cdTimer.GetComponentInChildren<TimerScript>(); }
 
@@ -99,11 +101,12 @@ public class GameManager : NetworkBehaviour {
     }
 
     void Update() {
+        Debug.Log("game manager updating.");
         if (GM_cdTimer == null) {
             GM_cdTimer = GameObject.FindGameObjectWithTag("Timer");
         }
 
-        if (GM_cdTimerScript == null) {
+        if (GM_cdTimerScript == null && GM_cdTimer != null) {
             GM_cdTimerScript = GM_cdTimer.GetComponentInChildren<TimerScript>();
         }
 
