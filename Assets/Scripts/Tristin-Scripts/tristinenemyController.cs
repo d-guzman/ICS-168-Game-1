@@ -82,7 +82,7 @@ public class tristinenemyController : NetworkBehaviour {
         }
         health = maxHealth;
         agent = GetComponent<NavMeshAgent>();
-        gameManagerReference.enemyCount += 1;
+        if (gameManagerReference != null) { gameManagerReference.enemyCount += 1; }
     }
 	
 	// Update is called once per frame
@@ -93,7 +93,14 @@ public class tristinenemyController : NetworkBehaviour {
         // }
 
         if (gameController == null) { gameController = GameObject.FindGameObjectWithTag("GameController"); }
-        if (gameManagerReference == null && gameController != null) { gameManagerReference = gameController.GetComponent<GameManager>(); }
+        if (gameManagerReference == null && gameController != null) 
+        { 
+            gameManagerReference = gameController.GetComponent<GameManager>();
+            
+            if (gameManagerReference != null) { 
+                gameManagerReference.enemyCount += 1; 
+            }
+        }
 
         if (players.Length < 2) {
             players = GameObject.FindGameObjectsWithTag("Player"); //Makes a list of all player objects at start

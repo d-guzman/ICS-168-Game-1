@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class bulletScript : MonoBehaviour {
+public class bulletScript : NetworkBehaviour {
 
     public float speed = 30f;
 
@@ -23,6 +24,13 @@ public class bulletScript : MonoBehaviour {
             other.GetComponent<tristinenemyController>().lastAttackWas = 2; //this means that the latest attack was a bullet
             other.GetComponent<tristinenemyController>().hurtEnemy(damage); //This is where the damage is done
             other.GetComponent<tristinenemyController>().bulletKnockback();
+            Destroy(this.gameObject);
+        }
+        
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (other.tag == "Wall") {
             Destroy(this.gameObject);
         }
     }

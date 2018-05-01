@@ -31,7 +31,7 @@ public class GameManager : NetworkBehaviour {
     // These varables are going to serve as a sort of safe storage for any values that come from the Timer.
 
     [SyncVar]
-    private int GM_secondsLeft = 60;    // This is an amount of seconds that should only appear for the on the first level.
+    public int GM_secondsLeft = 60;    // This is an amount of seconds that should only appear for the on the first level.
     private float GM_countdownRate = 1f;     //This should only be appearing for the first level.
 
     void Awake() {

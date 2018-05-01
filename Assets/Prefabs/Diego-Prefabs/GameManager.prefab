@@ -89,4 +89,8 @@ MonoBehaviour:
   enemyDeathSpot: {fileID: 0}
   enemyDeathPosition: {x: 0, y: 0, z: 0}
   enemyDeathRoation: {x: 0, y: 0, z: 0, w: 0}
+  enemyKilled: 0
   portalExists: 0
+  GM_cdTimer: {fileID: 0}
+  GM_cdTimerScript: {fileID: 0}
+  GM_secondsLeft: 60

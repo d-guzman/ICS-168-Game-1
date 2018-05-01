@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 81752392}
   m_Layer: 0
   m_Name: Building Wall (13)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 116359158}
   m_Layer: 0
   m_Name: Building Wall (17)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -1305,7 +1305,7 @@ GameObject:
   - component: {fileID: 134646360}
   m_Layer: 0
   m_Name: Building Wall (11)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -1512,7 +1512,7 @@ GameObject:
   - component: {fileID: 179120157}
   m_Layer: 0
   m_Name: Car (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -1723,7 +1723,7 @@ GameObject:
   - component: {fileID: 186978282}
   m_Layer: 0
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 193202534}
   m_Layer: 0
   m_Name: Building Wall (15)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -2050,7 +2050,7 @@ GameObject:
   - component: {fileID: 226384697}
   m_Layer: 0
   m_Name: Building Wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -2841,7 +2841,7 @@ GameObject:
   - component: {fileID: 389129171}
   m_Layer: 0
   m_Name: Garage Wall (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -3109,7 +3109,7 @@ GameObject:
   - component: {fileID: 422411556}
   m_Layer: 0
   m_Name: Building Wall (18)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -3319,7 +3319,7 @@ GameObject:
   - component: {fileID: 469258987}
   m_Layer: 0
   m_Name: Building Wall (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -3424,7 +3424,7 @@ GameObject:
   - component: {fileID: 482355238}
   m_Layer: 0
   m_Name: Garage Wall (9)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -3580,7 +3580,7 @@ GameObject:
   - component: {fileID: 487081348}
   m_Layer: 0
   m_Name: Car (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -3984,7 +3984,7 @@ GameObject:
   - component: {fileID: 523331666}
   m_Layer: 0
   m_Name: Building Wall (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -4242,7 +4242,7 @@ GameObject:
   - component: {fileID: 558288532}
   m_Layer: 0
   m_Name: Garage Wall (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -4503,7 +4503,7 @@ GameObject:
   - component: {fileID: 602040425}
   m_Layer: 0
   m_Name: Building Wall (12)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -4608,7 +4608,7 @@ GameObject:
   - component: {fileID: 628173914}
   m_Layer: 0
   m_Name: Building Wall (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -4764,7 +4764,7 @@ GameObject:
   - component: {fileID: 661785994}
   m_Layer: 0
   m_Name: Garage Wall (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -5067,7 +5067,7 @@ GameObject:
   - component: {fileID: 703902649}
   m_Layer: 0
   m_Name: Pillar (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -5238,7 +5238,7 @@ GameObject:
   - component: {fileID: 716380375}
   m_Layer: 0
   m_Name: Building Wall (19)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -5343,7 +5343,7 @@ GameObject:
   - component: {fileID: 728342691}
   m_Layer: 0
   m_Name: Building Wall (8)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -5448,7 +5448,7 @@ GameObject:
   - component: {fileID: 760963890}
   m_Layer: 0
   m_Name: Pillar (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -5605,7 +5605,7 @@ GameObject:
   - component: {fileID: 813703983}
   m_Layer: 0
   m_Name: Garage Wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -6093,7 +6093,7 @@ GameObject:
   - component: {fileID: 885903894}
   m_Layer: 0
   m_Name: Garage Wall (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -6198,7 +6198,7 @@ GameObject:
   - component: {fileID: 900331174}
   m_Layer: 0
   m_Name: Garage Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -6572,7 +6572,7 @@ GameObject:
   - component: {fileID: 960748331}
   m_Layer: 0
   m_Name: Building Wall (16)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -7034,7 +7034,7 @@ GameObject:
   - component: {fileID: 1043624708}
   m_Layer: 0
   m_Name: Car (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -7140,7 +7140,7 @@ GameObject:
   - component: {fileID: 1053924791}
   m_Layer: 0
   m_Name: Pillar (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -7719,7 +7719,7 @@ GameObject:
   - component: {fileID: 1132125414}
   m_Layer: 0
   m_Name: Pillar (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -8035,7 +8035,7 @@ GameObject:
   - component: {fileID: 1192196423}
   m_Layer: 0
   m_Name: Car (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -8532,7 +8532,7 @@ GameObject:
   - component: {fileID: 1269552825}
   m_Layer: 0
   m_Name: Building Wall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -8780,7 +8780,7 @@ GameObject:
   - component: {fileID: 1318671961}
   m_Layer: 0
   m_Name: Car (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -8886,7 +8886,7 @@ GameObject:
   - component: {fileID: 1332613049}
   m_Layer: 0
   m_Name: Building Wall (20)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -8991,7 +8991,7 @@ GameObject:
   - component: {fileID: 1337783526}
   m_Layer: 0
   m_Name: Building Wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -9245,7 +9245,7 @@ GameObject:
   - component: {fileID: 1403552581}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -9500,7 +9500,7 @@ GameObject:
   - component: {fileID: 1474766092}
   m_Layer: 0
   m_Name: Pillar (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -9657,7 +9657,7 @@ GameObject:
   - component: {fileID: 1486344524}
   m_Layer: 0
   m_Name: Garage Wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -9953,7 +9953,7 @@ GameObject:
   - component: {fileID: 1526248641}
   m_Layer: 0
   m_Name: Building Wall (21)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -10109,7 +10109,7 @@ GameObject:
   - component: {fileID: 1572244800}
   m_Layer: 0
   m_Name: Car (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -10215,7 +10215,7 @@ GameObject:
   - component: {fileID: 1572496736}
   m_Layer: 0
   m_Name: Car (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -10592,7 +10592,7 @@ GameObject:
   - component: {fileID: 1607229169}
   m_Layer: 0
   m_Name: Building Wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -11043,7 +11043,7 @@ GameObject:
   - component: {fileID: 1640957205}
   m_Layer: 0
   m_Name: Car (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -11419,7 +11419,7 @@ GameObject:
   - component: {fileID: 1670908149}
   m_Layer: 0
   m_Name: Building Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -11625,7 +11625,7 @@ GameObject:
   - component: {fileID: 1676391410}
   m_Layer: 0
   m_Name: Garage Wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -11781,7 +11781,7 @@ GameObject:
   - component: {fileID: 1691503222}
   m_Layer: 0
   m_Name: Building Wall (10)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -11886,7 +11886,7 @@ GameObject:
   - component: {fileID: 1697707147}
   m_Layer: 0
   m_Name: Building Wall (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -12513,7 +12513,7 @@ GameObject:
   - component: {fileID: 1874760086}
   m_Layer: 0
   m_Name: Garage Wall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -13037,7 +13037,7 @@ GameObject:
   - component: {fileID: 1911868685}
   m_Layer: 0
   m_Name: Pillar (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -13444,7 +13444,7 @@ GameObject:
   - component: {fileID: 2041749853}
   m_Layer: 0
   m_Name: Building Wall (14)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -14042,7 +14042,7 @@ GameObject:
   - component: {fileID: 2106696075}
   m_Layer: 0
   m_Name: Pillar (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
