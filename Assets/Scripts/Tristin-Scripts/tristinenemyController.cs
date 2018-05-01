@@ -144,7 +144,11 @@ public class tristinenemyController : NetworkBehaviour {
             //Debug.Log("Enemy is dead");
             if(lastAttackWas == 1 )
             {
-                timeDeathValue = timeDeathValue * 2;
+                timeDeathValue = 5;
+            }
+            else if(lastAttackWas == 2)
+            {
+                timeDeathValue = 3;
             }
             gameManagerReference.addSomeTime(timeDeathValue);
             gameManagerReference.enemyCount -= 1;
