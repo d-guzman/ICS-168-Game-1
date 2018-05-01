@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Parker_Scenes/BuildingAndOutside.unity
     guid: f00da99f88c304d46aed0e8425b7524b
   - enabled: 1
+    path: Assets/Scenes/David-Scenes/David_Game_Win.unity
+    guid: b467f9f3d2e2e4546ba978c548c5ffb0
+  - enabled: 1
     path: Assets/Scenes/David-Scenes/David_Game_Over.unity
     guid: f63ac376518ffa64da702f8c5948f778
   - enabled: 0
