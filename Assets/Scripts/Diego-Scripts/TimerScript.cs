@@ -50,8 +50,23 @@ public class TimerScript : NetworkBehaviour {
     IEnumerator decrementTime() {
         countdownStarted = true;
         yield return new WaitForSeconds(countdownRate);
-        if (secondsLeft != 0) { secondsLeft--; }
+        if (secondsLeft > 0) { secondsLeft--; }
+        else {
+            if (isServer) {
+                RpcLoadGameOver();
+                loadGameOver();
+            }
+        }
         countdownStarted = false;
+    }
+
+    [ClientRpc]
+    void RpcLoadGameOver() {
+        loadGameOver();
+    }
+
+    void loadGameOver() {
+        NetworkManager.singleton.ServerChangeScene("David_Game_Over");
     }
     // MissionTime - Runtime = Timeleft
     // MissionTime + seconds = timeafterkilledenemy | missionTime - seconds = timeafterhit
