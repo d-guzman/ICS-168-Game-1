@@ -1,17 +1,25 @@
 # ICS 168 game 1
 
 Diego
+
 David
+
 Parker
+
 Nikhil
+
 Tristin
+
 Ben
 
 ### Controls
 
 wasd - movement
+
 mouse - move to aim
+
 left click - punch
+
 right click - shoot
 
 ### Multiplayer
