@@ -1,6 +1,6 @@
 # ICS 168 game 1
 
-Diego
+Diego Guzman
 
 David
 
