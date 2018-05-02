@@ -2,7 +2,7 @@
 
 Diego Guzman
 
-David Jamgochian
+David
 
 Parker
 
