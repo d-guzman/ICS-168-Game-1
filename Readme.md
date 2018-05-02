@@ -1,18 +1,18 @@
 # ICS 168 game 1
 
-Diego/n
-David/n
-Parker/n
-Nikhil/n
-Tristin/n
-Ben/n
+Diego
+David
+Parker
+Nikhil
+Tristin
+Ben
 
 ### Controls
 
-wasd - movement/n
-mouse - move to aim/n
-left click - punch/n
-right click - shoot/n
+wasd - movement
+mouse - move to aim
+left click - punch
+right click - shoot
 
 ### Multiplayer
 
